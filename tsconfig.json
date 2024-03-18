@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "useDefineForClassFields": true,
+    "target": "ESNext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "downlevelIteration": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "~/app": ["./src/app"],
+      "~/app/*": ["./src/app/*"],
+      "~/assets/*": ["./src/assets/*"],
+      "~/features/*": ["./src/features/*"],
+      "~/entities/*": ["./src/entities/*"],
+      "~/pages/*": ["./src/pages/*"],
+      "~/shared/api": ["./src/shared/api"],
+      "~/shared/api/*": ["./src/shared/api/*"],
+      "~/shared/lib/*": ["./src/shared/lib/*"],
+      "~/shared/ui/*": ["./src/shared/ui/*"],
+      "~/widgets/*": ["src/features/*"],
+    }
+  },
+  "typeRoots": ["node_modules/@types", "./src/shared/lib/types"],
+  "include": [
+    "./src",
+    "./src/**/*",
+  ],
+  "exclude": [
+    "./node_modules",
+    "**/*.spec.ts"
+  ],
+}
