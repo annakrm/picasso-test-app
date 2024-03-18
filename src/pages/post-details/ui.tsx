@@ -22,35 +22,30 @@ export const PostDetails: FC = () => {
     navigate('/');
   };
 
-  if (!data) {
-    return (
-      <S.Wrapper>
-        <h2>{`Данные по посту с id ${postId} не найдены`}</h2>
-        <Button onClick={handleBackButtonClick} variant="contained" size="small">
-          Назад
-        </Button>
-      </S.Wrapper>
-    );
-  }
-
-  const { id, userId, title, body } = data;
+  const isPending = isLoading || isFetching;
 
   return (
     <S.Wrapper>
       <h1>Post Details</h1>
 
-      {isLoading || isFetching ? (
+      {isPending ? (
         <Spinner />
       ) : (
         <S.Content>
           <Column gap={2}>
-            <Row gap={2}>
-              <span>Post Id: {id}</span>
-              <span>User Id: {userId}</span>
-            </Row>
+            {data ? (
+              <>
+                <Row gap={2}>
+                  <span>Post Id: {data.id}</span>
+                  <span>User Id: {data.userId}</span>
+                </Row>
 
-            <S.Title>{title}</S.Title>
-            <S.Body>{body}</S.Body>
+                <S.Title>{data.title}</S.Title>
+                <S.Body>{data.body}</S.Body>
+              </>
+            ) : (
+              <h2>{`Данные по посту с id ${postId} не найдены`}</h2>
+            )}
 
             <S.BackButtonWrapper>
               <Button onClick={handleBackButtonClick} variant="contained" size="small">
