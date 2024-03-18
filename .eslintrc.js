@@ -59,6 +59,14 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {},
+    }
+  },
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -77,7 +85,7 @@ module.exports = {
     'react/jsx-key': 2,
     'react/jsx-curly-brace-presence': 2,
     'react-extra/no-inline-styles': 1,
-
+  
     'block-scoped-var': 2,
     'brace-style': [2, '1tbs'],
     'curly': [2, 'all'],

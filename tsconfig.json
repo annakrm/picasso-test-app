@@ -37,12 +37,13 @@
       "~/shared/api/*": ["./src/shared/api/*"],
       "~/shared/lib/*": ["./src/shared/lib/*"],
       "~/shared/ui/*": ["./src/shared/ui/*"],
-      "~/widgets/*": ["./src/widgets/*"],
+      "~/widgets/*": ["src/features/*"],
     }
   },
+  "typeRoots": ["node_modules/@types", "./src/shared/lib/types"],
   "include": [
     "./src",
-    "./src/**/*"
+    "./src/**/*",
   ],
   "exclude": [
     "./node_modules",
