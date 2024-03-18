@@ -42,6 +42,9 @@ const config = {
   optimization: {
     usedExports: true,
   },
+  performance : {
+    hints : false
+  },
   devServer: {
     port: 3000,
     historyApiFallback: true,
@@ -97,9 +100,9 @@ const config = {
     ),
     new DefinePlugin({
       API_PATH: '',
-      PUBLIC_PATH: '',
       IS_DEV: isDevOrStandalone,
       BUILD_VERSION: 'build-v1.0.0',
+      process: { env: {} },
     }),
     new HTMLWebpackPlugin({
       template: './public/index.html',
