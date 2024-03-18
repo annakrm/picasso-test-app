@@ -99,10 +99,7 @@ const config = {
       new RegExp(`[/\\\\\](${supportedLocales.join('|')})[/\\\\\]index\.js$`)
     ),
     new DefinePlugin({
-      API_PATH: '',
-      IS_DEV: isDevOrStandalone,
-      BUILD_VERSION: 'build-v1.0.0',
-      process: { env: {} },
+      'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
     }),
     new HTMLWebpackPlugin({
       template: './public/index.html',

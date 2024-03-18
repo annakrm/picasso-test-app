@@ -2,13 +2,14 @@
   "name": "picasso-test-app",
   "version": "1.0.1",
   "private": true,
+  "homepage": "./", 
   "scripts": {
-    "start": "cross-env NODE_ENV=developmen PUBLIC_URL='/' TSC_WATCHFILE=UseFsEventsWithFallbackDynamicPolling webpack server",
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=6144 BABEL_ENV=production NODE_ENV=production webpack --config webpack.config.js",
+    "start": "cross-env NODE_ENV=development PUBLIC_URL='/' TSC_WATCHFILE=UseFsEventsWithFallbackDynamicPolling webpack server",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=6144 BABEL_ENV=production NODE_ENV=production PUBLIC_URL='/picasso-test-app' webpack --config webpack.config.js",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "serve": "serve dist -p 3000",
-    "predeploy": "PUBLIC_URL='/picasso-test-app' npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
@@ -113,7 +114,8 @@
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.1",
     "webpack-manifest-plugin": "5.0.0",
-    "webpack-merge": "^5.10.0"
+    "webpack-merge": "^5.10.0",
+    "gh-pages": "^3.1.0"
   },
   "eslintConfig": {
     "extends": [
